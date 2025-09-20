@@ -10,7 +10,7 @@ class Graph:
 
     def add_vertex(self, vertex):
         if vertex not in self.graph:
-            self.graph[vertext] = []
+            self.graph[vertex] = []
 
     def remove_vertex(self, vertex):
         if vertex in self.graph:
@@ -27,7 +27,7 @@ class Graph:
         if u not in self.graph:
             self.add_vertex(u)
         if v not in self.graph:
-            sefl.add_vertex(v)
+            self.add_vertex(v)
         
         if self.weighted:
             self.graph[u].append((v, weight))
@@ -66,12 +66,12 @@ class Graph:
                 visited.add(vertex)
                 result.append(vertex)
 
-                neighbors = self.graph.get(vertex, []):
+                neighbors = self.graph.get(vertex, [])
                 if self.weighted:
                     neighbors = [n for (n, w) in neighbors]
 
                 for neighbor in neighbors:
-                    if neighbor not in visted:
+                    if neighbor not in visited:
                         queue.enqueue(neighbor)
 
         return result
